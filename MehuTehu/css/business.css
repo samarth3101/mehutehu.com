@@ -1,0 +1,68 @@
+/* Business Section Styles */
+.business-section {
+    background-color: var(--bg-light);
+    /* height: auto; */
+}
+
+.services-grid {
+    margin-top: 50px;
+}
+
+.service-card {
+    padding: 30px;
+    text-align: center;
+    transition: all var(--transition-speed) ease;
+    border-bottom: 3px solid transparent;
+}
+
+.service-card:hover {
+    border-bottom: 3px solid var(--saffron-primary);
+}
+
+.service-card img {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    padding: 15px;
+    background-color: rgba(255, 153, 51, 0.1);
+    border-radius: 50%;
+    transition: all var(--transition-speed) ease;
+}
+
+.service-card:hover img {
+    background-color: rgba(255, 153, 51, 0.2);
+    transform: translateY(-5px);
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.service-card p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Animation for services */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}

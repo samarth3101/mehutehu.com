@@ -1,0 +1,107 @@
+/* Team Section Styles */
+.team-section {
+    background-color: var(--bg-light);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.team-member {
+    text-align: center;
+    padding-bottom: 30px;
+    transition: all var(--transition-speed) ease;
+}
+
+.member-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 25px;
+    border: 5px solid rgba(255, 153, 51, 0.2);
+    transition: all var(--transition-speed) ease;
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all var(--transition-speed) ease;
+}
+
+.team-member:hover .member-image {
+    border-color: var(--saffron-primary);
+    transform: scale(1.05);
+}
+
+.team-member h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    color: var(--text-dark);
+}
+
+.member-role {
+    color: var(--saffron-primary);
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.member-bio {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* Social media links for team members (if needed) */
+.member-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-link {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: rgba(255, 153, 51, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--saffron-dark);
+    transition: all var(--transition-speed) ease;
+}
+
+.social-link:hover {
+    background-color: var(--saffron-primary);
+    color: white;
+}
+
+/* Animation delay for staggered effect */
+.team-member:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.team-member:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .member-image {
+        width: 180px;
+        height: 180px;
+    }
+}

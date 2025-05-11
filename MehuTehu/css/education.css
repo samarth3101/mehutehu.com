@@ -1,0 +1,74 @@
+/* Education Section Styles */
+.education-section {
+    background-color: var(--bg-gray);
+    position: relative;
+    overflow: hidden;
+    /* height: 100vh; */
+}
+
+.education-section:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    background-color: rgba(255, 153, 51, 0.05);
+    border-radius: 50%;
+    transform: translate(100px, -150px);
+    z-index: 0;
+}
+
+.education-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.education-section .service-card {
+    background-color: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.education-section .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.education-section .service-card img {
+    background-color: rgba(255, 153, 51, 0.15);
+}
+
+.education-section .service-card h3 {
+    color: var(--saffron-dark);
+}
+
+/* Animation delay for staggered effect */
+.education-section .service-card:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.education-section .service-card:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.education-section .service-card:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .education-section:before {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .education-section:before {
+        display: none;
+    }
+}
