@@ -1,0 +1,48 @@
+.story-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #e0f7fa, #fbe9e7);
+  color: #1e1e1e;
+  font-family: 'Helvetica Neue', sans-serif;
+
+  .story-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .story-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #00575b;
+    margin-bottom: 0.25rem;
+
+    .brand-name {
+      color: #f57c00;
+    }
+  }
+
+  .story-tagline {
+    font-size: 1.25rem;
+    color: #4e342e;
+    margin-bottom: 2rem;
+    font-style: italic;
+  }
+
+  .story-paragraphs p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+  }
+
+  .story-cta {
+    font-weight: bold;
+    color: #00695c;
+  }
+
+  .story-signoff {
+    margin-top: 3rem;
+    font-size: 1.25rem;
+    color: #2e7d32;
+    font-weight: 600;
+  }
+}

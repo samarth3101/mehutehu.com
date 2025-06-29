@@ -1,0 +1,209 @@
+/* Team Section Styles */
+.team-section {
+    background-color: var(--bg-light);
+    padding: 80px 0;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.team-member {
+    text-align: center;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all var(--transition-speed) ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.team-member::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(45deg, var(--saffron-primary), var(--saffron-dark));
+    transform: translateX(-100%);
+    transition: transform var(--transition-speed) ease;
+}
+
+.team-member:hover::before {
+    transform: translateX(0);
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Replace member-image with member-avatar */
+.member-avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    font-weight: bold;
+    color: white;
+    border: 5px solid rgba(255, 153, 51, 0.2);
+    transition: all var(--transition-speed) ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.member-avatar::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+    opacity: 0;
+}
+
+.team-member:hover .member-avatar {
+    border-color: var(--saffron-primary);
+    transform: scale(1.05);
+}
+
+.team-member:hover .member-avatar::before {
+    animation: shimmer 1.5s ease-in-out;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+/* Different gradient backgrounds for each avatar using your saffron theme */
+.member-avatar.cb {
+    background: linear-gradient(135deg, var(--saffron-primary) 0%, var(--saffron-dark) 100%);
+}
+
+.member-avatar.sp {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+}
+
+.member-avatar.sam {
+    background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+}
+
+.team-member h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.member-role {
+    color: var(--saffron-primary);
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.member-bio {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* Social media links for team members (if needed) */
+.member-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-link {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: rgba(255, 153, 51, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--saffron-dark);
+    transition: all var(--transition-speed) ease;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    background-color: var(--saffron-primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Animation delay for staggered effect */
+.team-member:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.team-member:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.team-member:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .team-section {
+        padding: 60px 0;
+    }
+    
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .team-member {
+        padding: 25px;
+    }
+
+    .member-avatar {
+        width: 180px;
+        height: 180px;
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .team-member {
+        padding: 20px;
+    }
+    
+    .member-avatar {
+        width: 150px;
+        height: 150px;
+        font-size: 2.5rem;
+    }
+}
